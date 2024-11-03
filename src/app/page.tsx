@@ -164,10 +164,9 @@ export default function Component() {
                                 animate={{ y: 0, opacity: 1 }}
                                 transition={{ delay: 0.2 }}
                             >
-                                <span className="flex items-center justify-center h-16 w-16 rounded-full bg-gray-200 mr-4 text-4xl border-4 border-yellow-500 font-bold">
+                                <span className="flex items-center justify-center h-16 w-16 rounded-full bg-gray-200 text-4xl border-4 border-gray-500 font-bold">
                                     {getMedalEmoji(1)}
                                 </span>
-                                <Sparkles className="absolute -top-1 -right-1 w-4 h-4 text-white" />
                             </motion.div>
                             <p className="text-white text-medium font-bold mt-2 text-center">
                                 {topThree[1].name}
@@ -187,7 +186,7 @@ export default function Component() {
                                 animate={{ y: 0, opacity: 1 }}
                                 transition={{ delay: 0 }}
                             >
-                                <span className="flex items-center justify-center h-16 w-16 rounded-full bg-gray-200 mr-4 text-4xl border-4 border-yellow-500 font-bold">
+                                <span className="flex items-center justify-center h-16 w-16 rounded-full bg-gray-200 text-4xl border-4 border-yellow-500 font-bold">
                                     {getMedalEmoji(0)}
                                 </span>
                                 <Sparkles className="absolute -top-2 -right-2 w-5 h-5 text-yellow-400" />
@@ -210,10 +209,9 @@ export default function Component() {
                                 animate={{ y: 0, opacity: 1 }}
                                 transition={{ delay: 0.4 }}
                             >
-                                <span className="flex items-center justify-center h-16 w-16 rounded-full bg-gray-200 mr-4 text-4xl border-4 border-yellow-500 font-bold">
+                                <span className="flex items-center justify-center h-16 w-16 rounded-full bg-gray-200 text-4xl border-4 border-orange-700 font-bold">
                                     {getMedalEmoji(2)}
                                 </span>
-                                <Sparkles className="absolute -top-1 -right-1 w-4 h-4 text-white" />
                             </motion.div>
                             <p className="text-white text-medium font-bold mt-2 text-center">
                                 {topThree[2].name}
