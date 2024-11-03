@@ -98,18 +98,18 @@ export default function Component() {
                         <p className="text-xs sm:text-md font-medium text-gray-900">
                             Pote
                         </p>
-                        <p className="text-lg sm:text-2xl font-semibold text-gray-900">
+                        <p className="text-md sm:text-2xl font-semibold text-gray-900">
                             $10
                         </p>
                     </div>
                     <div className="flex flex-col text-center p-2">
                         <p className="mb-2">
-                            <User className="h-5 w-5 text-yellow-600 m-auto" />
+                            <User className="h-5 w-5 text-blue-600 m-auto" />
                         </p>
                         <p className="text-xs sm:text-md font-medium text-gray-900">
                             Atletas
                         </p>
-                        <p className="text-lg sm:text-2xl font-semibold text-gray-900">
+                        <p className="text-md sm:text-2xl font-semibold text-gray-900">
                             10
                         </p>
                     </div>
@@ -118,9 +118,9 @@ export default function Component() {
                             <ClockIcon className="h-5 w-5 text-gray-600 m-auto" />
                         </p>
                         <p className="text-xs sm:text-md font-medium text-gray-900">
-                            Tiempo Restante
+                            Restante
                         </p>
-                        <div className="text-lg sm:text-2xl font-semibold text-gray-900">
+                        <div className="text-md sm:text-2xl font-semibold text-gray-900">
                             <Countdown
                                 date={endDate}
                                 renderer={({
