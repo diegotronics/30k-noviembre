@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion'
 import Countdown from 'react-countdown'
-import { Sparkles, TrophyIcon, ClockIcon, GroupIcon } from 'lucide-react'
+import { Sparkles, TrophyIcon, ClockIcon, User } from 'lucide-react'
 import { ScrollArea } from '@/components/ui/scroll-area'
 
 type Player = {
@@ -90,32 +90,54 @@ export default function Component() {
                     Reto 30k Noviembre
                 </h1>
 
-                <div className="bg-white shadow overflow-hidden rounded mb-14 p-2 grid grid-cols-2">
-                    <div className="flex flex-col text-center">
-                        <p className="text-md leading-6 font-medium text-gray-900 flex items-center">
-                            <TrophyIcon className="h-5 w-5 text-yellow-600 mr-2" />
+                <div className="bg-white shadow overflow-hidden rounded mb-14 p-2 grid grid-cols-3 divide-x">
+                    <div className="flex flex-col text-center p-2">
+                        <p className="mb-2">
+                            <TrophyIcon className="h-5 w-5 text-yellow-600 m-auto" />
+                        </p>
+                        <p className="text-xs sm:text-md font-medium text-gray-900">
                             Pote
                         </p>
-                        <p className="mt-2 text-2xl font-semibold text-gray-900">
+                        <p className="text-lg sm:text-2xl font-semibold text-gray-900">
                             $10
                         </p>
                     </div>
-                    <div className="flex flex-col text-center">
-                        <h2 className="text-md leading-6 font-medium text-gray-900 flex items-center">
-                            <ClockIcon className="h-5 w-5 text-blue-500 mr-2" />
+                    <div className="flex flex-col text-center p-2">
+                        <p className="mb-2">
+                            <User className="h-5 w-5 text-yellow-600 m-auto" />
+                        </p>
+                        <p className="text-xs sm:text-md font-medium text-gray-900">
+                            Atletas
+                        </p>
+                        <p className="text-lg sm:text-2xl font-semibold text-gray-900">
+                            10
+                        </p>
+                    </div>
+                    <div className="flex flex-col text-center p-2">
+                        <p className="mb-2">
+                            <ClockIcon className="h-5 w-5 text-gray-600 m-auto" />
+                        </p>
+                        <p className="text-xs sm:text-md font-medium text-gray-900">
                             Tiempo Restante
-                        </h2>
-                        <Countdown
-                            date={endDate}
-                            renderer={({ days, hours, minutes, seconds }) => (
-                                <div className="mt-2 pl-2 text-2xl font-semibold text-gray-900">
-                                    {String(days).padStart(2, '0')}:
-                                    {String(hours).padStart(2, '0')}:
-                                    {String(minutes).padStart(2, '0')}:
-                                    {String(seconds).padStart(2, '0')}
-                                </div>
-                            )}
-                        />
+                        </p>
+                        <p className="text-lg sm:text-2xl font-semibold text-gray-900">
+                            <Countdown
+                                date={endDate}
+                                renderer={({
+                                    days,
+                                    hours,
+                                    minutes,
+                                    seconds,
+                                }) => (
+                                    <div>
+                                        {String(days).padStart(2, '0')}:
+                                        {String(hours).padStart(2, '0')}:
+                                        {String(minutes).padStart(2, '0')}:
+                                        {String(seconds).padStart(2, '0')}
+                                    </div>
+                                )}
+                            />
+                        </p>
                     </div>
                 </div>
 
@@ -135,7 +157,7 @@ export default function Component() {
                                 </span>
                                 <Sparkles className="absolute -top-1 -right-1 w-4 h-4 text-white" />
                             </motion.div>
-                            <p className="text-white text-medium font-bold mt-2">
+                            <p className="text-white text-medium font-bold mt-2 text-center">
                                 {topThree[1].name}
                             </p>
                             <div className="bg-gray-300 h-32 w-24 rounded-t-lg mt-2 flex items-center justify-center">
@@ -158,7 +180,7 @@ export default function Component() {
                                 </span>
                                 <Sparkles className="absolute -top-2 -right-2 w-5 h-5 text-yellow-400" />
                             </motion.div>
-                            <p className="text-white text-medium font-bold mt-2">
+                            <p className="text-white text-medium font-bold mt-2 text-center">
                                 {topThree[0].name}
                             </p>
                             <div className="bg-yellow-400 h-40 w-24 rounded-t-lg mt-2 flex items-center justify-center">
@@ -181,7 +203,7 @@ export default function Component() {
                                 </span>
                                 <Sparkles className="absolute -top-1 -right-1 w-4 h-4 text-white" />
                             </motion.div>
-                            <p className="text-white text-medium font-bold mt-2">
+                            <p className="text-white text-medium font-bold mt-2 text-center">
                                 {topThree[2].name}
                             </p>
                             <div className="bg-orange-400 h-24 w-24 rounded-t-lg mt-2 flex items-center justify-center">
@@ -195,9 +217,6 @@ export default function Component() {
 
                 {/* Rest of players list */}
                 <div className="bg-white rounded-xl p-4">
-                    <div className="text-sm text-gray-500 flex items-center">
-                        Atletas Inscritos: {players.length}
-                    </div>
                     <ScrollArea className="h-64 w-full pr-4">
                         {restOfPlayers.map((player, index) => (
                             <motion.div
