@@ -4,11 +4,13 @@ import { motion } from 'framer-motion'
 import Countdown from 'react-countdown'
 import { Sparkles, TrophyIcon, ClockIcon, User } from 'lucide-react'
 import { ScrollArea } from '@/components/ui/scroll-area'
+import { Badge } from '@/components/ui/badge'
 
 type Player = {
     name: string
     km: number
     position: number
+    moroso: boolean
 }
 
 const endDate = new Date('2024-11-30T23:59:59')
@@ -31,51 +33,61 @@ const players: Player[] = [
         name: 'Ángela González',
         km: 6.2,
         position: 1,
+        moroso: false,
     },
     {
         name: 'Oneida Aguirre',
         km: 6.07,
         position: 2,
+        moroso: false,
     },
     {
         name: 'Adrián González',
         km: 4.35,
         position: 3,
+        moroso: true,
     },
     {
         name: 'Doris González',
         km: 0,
         position: 4,
+        moroso: false,
     },
     {
         name: 'Gladys "Mary" González',
         km: 0,
         position: 5,
+        moroso: true,
     },
     {
         name: 'Juana Rivero',
         km: 0,
         position: 6,
+        moroso: true,
     },
     {
         name: 'Jose "Nacho" Pérez',
         km: 0,
         position: 7,
+        moroso: true,
     },
     {
         name: 'Carlos González',
         km: 0,
         position: 8,
+        moroso: true,
     },
     {
         name: 'Gerardo Pérez',
         km: 0,
         position: 9,
+        moroso: true,
     },
     {
         name: 'Ricardo Pérez',
         km: 0,
         position: 10,
+        moroso: true,
     },
 ]
 
@@ -232,6 +244,14 @@ export default function Component() {
                                     </span>
                                     <span className="font-medium">
                                         {player.name}
+                                        {player.moroso && (
+                                            <Badge
+                                                className="ml-2 bg-red-200"
+                                                variant="secondary"
+                                            >
+                                                Moroso
+                                            </Badge>
+                                        )}
                                     </span>
                                 </div>
                                 <div className="flex items-center gap-4 pr-2 shrink-0">
