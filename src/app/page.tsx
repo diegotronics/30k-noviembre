@@ -120,7 +120,7 @@ export default function Component() {
                         <p className="text-xs sm:text-md font-medium text-gray-900">
                             Tiempo Restante
                         </p>
-                        <p className="text-lg sm:text-2xl font-semibold text-gray-900">
+                        <div className="text-lg sm:text-2xl font-semibold text-gray-900">
                             <Countdown
                                 date={endDate}
                                 renderer={({
@@ -137,7 +137,7 @@ export default function Component() {
                                     </div>
                                 )}
                             />
-                        </p>
+                        </div>
                     </div>
                 </div>
 
