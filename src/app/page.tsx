@@ -110,6 +110,9 @@ export default function Component() {
             <span>🏃‍♀️</span>
             <span className="mx-4">Génesis León</span>
             <span className="font-bold">12.1 km</span>
+            <Badge className="ml-2 bg-red-200" variant="secondary">
+              Moroso
+            </Badge>
           </motion.div>
         </div>
 
