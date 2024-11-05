@@ -6,12 +6,7 @@ import { Sparkles, TrophyIcon, ClockIcon, User } from 'lucide-react'
 import { ScrollArea } from '@/components/ui/scroll-area'
 import { Badge } from '@/components/ui/badge'
 
-type Player = {
-  name: string
-  km: number
-  position: number
-  moroso: boolean
-}
+import { PLAYERS, GENE } from '@/data/players'
 
 const endDate = new Date('2024-11-30T23:59:59')
 
@@ -28,72 +23,9 @@ const getMedalEmoji = (index: number) => {
   }
 }
 
-const players: Player[] = [
-  {
-    name: 'Ángela González',
-    km: 6.2,
-    position: 1,
-    moroso: false,
-  },
-  {
-    name: 'Oneida Aguirre',
-    km: 6.07,
-    position: 2,
-    moroso: false,
-  },
-  {
-    name: 'Adrián González',
-    km: 4.35,
-    position: 3,
-    moroso: true,
-  },
-  {
-    name: 'Doris González',
-    km: 0,
-    position: 4,
-    moroso: false,
-  },
-  {
-    name: 'Gladys "Mary" González',
-    km: 0,
-    position: 5,
-    moroso: true,
-  },
-  {
-    name: 'Juana Rivero',
-    km: 0,
-    position: 6,
-    moroso: true,
-  },
-  {
-    name: 'Jose "Nacho" Pérez',
-    km: 0,
-    position: 7,
-    moroso: true,
-  },
-  {
-    name: 'Carlos González',
-    km: 0,
-    position: 8,
-    moroso: true,
-  },
-  {
-    name: 'Gerardo Pérez',
-    km: 0,
-    position: 9,
-    moroso: false,
-  },
-  {
-    name: 'Ricardo Pérez',
-    km: 0,
-    position: 10,
-    moroso: true,
-  },
-]
-
 export default function Component() {
-  const topThree = players.slice(0, 3)
-  const restOfPlayers = players.slice(3)
+  const topThree = PLAYERS.slice(0, 3)
+  const restOfPlayers = PLAYERS.slice(3)
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-orange-500 to-orange-700 p-6">
@@ -108,11 +40,12 @@ export default function Component() {
             transition={{ repeat: Infinity, duration: 7, ease: 'linear' }}
           >
             <span>🏃‍♀️</span>
-            <span className="mx-4">Génesis León</span>
-            <span className="font-bold">12.1 km</span>
+            <span className="mx-4">{GENE.name}</span>
+            <span className="font-bold">{GENE.km} km</span>
+            {GENE.moroso && (
             <Badge className="ml-2 bg-red-200" variant="secondary">
               Moroso
-            </Badge>
+            </Badge>)}
           </motion.div>
         </div>
 
@@ -239,7 +172,7 @@ export default function Component() {
               >
                 <div className="flex items-center gap-3">
                   <span className="flex items-center justify-center h-12 w-12 rounded-full bg-gray-200 mr-4 text-2xl font-bold shrink-0">
-                    {player.position}
+                    {index + 4}
                   </span>
                   <span className="font-medium">
                     {player.name}
