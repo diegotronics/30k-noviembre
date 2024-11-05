@@ -17,22 +17,22 @@ export const PLAYERS: Player[] = [
     },
     {
       name: 'Adrián González',
-      km: 4.35,
+      km: 8.88,
       moroso: true,
     },
     {
       name: 'Doris González',
-      km: 0,
+      km: 5.54,
       moroso: false,
     },
     {
       name: 'Gladys "Mary" González',
-      km: 0,
+      km: 2.58,
       moroso: true,
     },
     {
       name: 'Juana Rivero',
-      km: 0,
+      km: 9.72,
       moroso: true,
     },
     {
