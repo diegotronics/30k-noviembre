@@ -24,8 +24,9 @@ const getMedalEmoji = (index: number) => {
 }
 
 export default function Component() {
-  const topThree = PLAYERS.slice(0, 3)
-  const restOfPlayers = PLAYERS.slice(3)
+  const orderedPlayers = PLAYERS.sort((a, b) => b.km - a.km)
+  const topThree = orderedPlayers.slice(0, 3)
+  const restOfPlayers = orderedPlayers.slice(3)
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-orange-500 to-orange-700 p-6">
