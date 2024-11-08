@@ -37,7 +37,7 @@ export const PLAYERS: Player[] = [
     },
     {
       name: 'Jose "Nacho" Pérez',
-      km: 0,
+      km: 2.73,
       moroso: true,
     },
     {
