@@ -7,12 +7,12 @@ type Player = {
 export const PLAYERS: Player[] = [
     {
       name: 'Ángela González',
-      km: 6.2,
+      km: 17.8,
       moroso: false,
     },
     {
       name: 'Oneida Aguirre',
-      km: 6.07,
+      km: 17.42,
       moroso: false,
     },
     {
@@ -22,17 +22,17 @@ export const PLAYERS: Player[] = [
     },
     {
       name: 'Doris González',
-      km: 5.54,
+      km: 12.34,
       moroso: false,
     },
     {
       name: 'Gladys "Mary" González',
-      km: 2.58,
+      km: 9.88,
       moroso: true,
     },
     {
       name: 'Juana Rivero',
-      km: 9.72,
+      km: 11.42,
       moroso: true,
     },
     {
@@ -59,6 +59,6 @@ export const PLAYERS: Player[] = [
 
   export const GENE: Player = {
     name: 'Génesis León',
-    km: 12.1,
+    km: 27.1,
     moroso: true,
   }
