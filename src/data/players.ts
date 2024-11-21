@@ -59,6 +59,6 @@ export const PLAYERS: Player[] = [
 
   export const GENE: Player = {
     name: 'Génesis León',
-    km: 56.44
+    km: 56.44,
     moroso: true,
   }
