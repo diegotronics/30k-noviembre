@@ -6,7 +6,7 @@ import { Sparkles, TrophyIcon, ClockIcon, User } from 'lucide-react'
 import { ScrollArea } from '@/components/ui/scroll-area'
 import { Badge } from '@/components/ui/badge'
 
-import { PLAYERS, GENE } from '@/data/players'
+import { WALKERS, RUNNERS } from '@/data/players'
 
 const endDate = new Date('2024-11-30T23:59:59')
 
@@ -24,9 +24,13 @@ const getMedalEmoji = (index: number) => {
 }
 
 export default function Component() {
-  const orderedPlayers = PLAYERS.sort((a, b) => b.km - a.km)
-  const topThree = orderedPlayers.slice(0, 3)
-  const restOfPlayers = orderedPlayers.slice(3)
+  const orderedWalkers = WALKERS.sort((a, b) => b.km - a.km)
+  const orderedRunners = RUNNERS.sort((a, b) => b.km - a.km)
+  const topThree = orderedWalkers.slice(0, 3)
+  const restOfPlayers = orderedWalkers.slice(3)
+
+  const durationRunners = orderedRunners.length * 7
+  console.log(durationRunners)
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-orange-500 to-orange-700 p-6">
@@ -37,16 +41,25 @@ export default function Component() {
         <div className="mb-4 rounded-full text-md text-white bg-white/20 overflow-hidden px-4">
           <motion.div
             className="flex items-center"
-            animate={{ x: ['100%', '-100%'] }}
-            transition={{ repeat: Infinity, duration: 7, ease: 'linear' }}
+            animate={{ x: ['100%', '-200%'] }}
+            transition={{
+              repeat: Infinity,
+              duration: durationRunners,
+              ease: 'linear',
+            }}
           >
-            <span>🏃‍♀️</span>
-            <span className="mx-4">{GENE.name}</span>
-            <span className="font-bold">{GENE.km} km</span>
-            {GENE.moroso && (
-            <Badge className="ml-2 bg-red-200" variant="secondary">
-              Moroso
-            </Badge>)}
+            {orderedRunners.map((runner, index) => (
+              <div className="mx-16 flex flex-row gap-2" key={index}>
+                <span>{runner.gender === 'F' ? '🏃‍♀️' : '🏃‍♂️'}</span>
+                <span className="mx-4 text-nowrap">{runner.name}</span>
+                <span className="font-bold text-nowrap">{runner.km} km</span>
+                {runner.moroso && (
+                  <Badge className="ml-2 bg-red-200" variant="secondary">
+                    Moroso
+                  </Badge>
+                )}
+              </div>
+            ))}
           </motion.div>
         </div>
 
