@@ -9,6 +9,7 @@ import { Badge } from '@/components/ui/badge'
 import { WALKERS, RUNNERS } from '@/data/players'
 
 const endDate = new Date('2024-11-30T23:59:59')
+const KM_GOAL = 30
 
 const getMedalEmoji = (index: number) => {
   switch (index) {
@@ -31,6 +32,10 @@ export default function Component() {
 
   const durationRunners = orderedRunners.length * 7
   console.log(durationRunners)
+
+  const isGoalReached = (km: number) => {
+    return km >= KM_GOAL ? 'bg-green-300' : 'bg-gray-100'
+  }
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-orange-500 to-orange-700 p-6">
@@ -118,7 +123,11 @@ export default function Component() {
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ delay: 0.2 }}
               >
-                <span className="flex items-center justify-center h-16 w-16 rounded-full bg-gray-200 text-4xl border-4 border-gray-500 font-bold">
+                <span
+                  className={`flex items-center justify-center h-16 w-16 rounded-full text-4xl border-4 border-gray-500 font-bold ${isGoalReached(
+                    topThree[1].km
+                  )}`}
+                >
                   {getMedalEmoji(1)}
                 </span>
               </motion.div>
@@ -138,7 +147,11 @@ export default function Component() {
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ delay: 0 }}
               >
-                <span className="flex items-center justify-center h-16 w-16 rounded-full bg-gray-200 text-4xl border-4 border-yellow-500 font-bold">
+                <span
+                  className={`flex items-center justify-center h-16 w-16 rounded-full text-4xl border-4 border-yellow-500 font-bold ${isGoalReached(
+                    topThree[0].km
+                  )}`}
+                >
                   {getMedalEmoji(0)}
                 </span>
                 <Sparkles className="absolute -top-2 -right-2 w-5 h-5 text-yellow-400" />
@@ -159,7 +172,11 @@ export default function Component() {
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ delay: 0.4 }}
               >
-                <span className="flex items-center justify-center h-16 w-16 rounded-full bg-gray-200 text-4xl border-4 border-orange-700 font-bold">
+                <span
+                  className={`flex items-center justify-center h-16 w-16 rounded-full text-4xl border-4 border-orange-700 font-bold ${isGoalReached(
+                    topThree[2].km
+                  )}`}
+                >
                   {getMedalEmoji(2)}
                 </span>
               </motion.div>
@@ -174,36 +191,36 @@ export default function Component() {
         </div>
 
         {/* Rest of players list */}
-        <div className="bg-white rounded-xl p-4">
-          <ScrollArea className="h-64 w-full pr-4">
-            {restOfPlayers.map((player, index) => (
-              <motion.div
-                key={player.name}
-                className="flex items-center justify-between py-3"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.1 + 0.5 }}
-              >
-                <div className="flex items-center gap-3">
-                  <span className="flex items-center justify-center h-12 w-12 rounded-full bg-gray-200 mr-4 text-2xl font-bold shrink-0">
-                    {index + 4}
-                  </span>
-                  <span className="font-medium">
-                    {player.name}
-                    {player.moroso && (
-                      <Badge className="ml-2 bg-red-200" variant="secondary">
-                        Moroso
-                      </Badge>
-                    )}
-                  </span>
-                </div>
-                <div className="flex items-center gap-4 pr-2 shrink-0">
-                  <span className="font-bold text-xl">{player.km} km</span>
-                </div>
-              </motion.div>
-            ))}
-          </ScrollArea>
-        </div>
+        <ScrollArea className="bg-white h-96 w-full rounded-xl p-2">
+          {restOfPlayers.map((player, index) => (
+            <motion.div
+              key={player.name}
+              className={`flex items-center justify-between py-3 px-2 rounded-xl mb-2 ${isGoalReached(
+                player.km
+              )}`}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: index * 0.1 + 0.5 }}
+            >
+              <div className="flex items-center gap-3">
+                <span className="flex items-center justify-center h-12 w-12 rounded-full bg-gray-200 mr-4 text-2xl font-bold shrink-0">
+                  {index + 4}
+                </span>
+                <span className="font-medium">
+                  {player.name}
+                  {player.moroso && (
+                    <Badge className="ml-2 bg-red-200" variant="secondary">
+                      Moroso
+                    </Badge>
+                  )}
+                </span>
+              </div>
+              <div className="flex items-center gap-4 pr-2 shrink-0">
+                <span className="font-bold text-xl">{player.km} km</span>
+              </div>
+            </motion.div>
+          ))}
+        </ScrollArea>
       </div>
     </div>
   )

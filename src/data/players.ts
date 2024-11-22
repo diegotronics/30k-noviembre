@@ -1,4 +1,4 @@
-type Player = {
+export type Player = {
   name: string
   gender?: string
   km: number
