@@ -8,12 +8,12 @@ export type Player = {
 export const WALKERS: Player[] = [
   {
     name: 'Ángela González',
-    km: 37.84,
+    km: 50.71,
     moroso: false,
   },
   {
     name: 'Oneida Aguirre',
-    km: 36.96,
+    km: 43.03,
     moroso: false,
   },
   {
@@ -28,22 +28,22 @@ export const WALKERS: Player[] = [
   },
   {
     name: 'Gladys "Mary" González',
-    km: 30.21,
-    moroso: false,
+    km: 45.43,
+    moroso: true,
   },
   {
     name: 'Juana Rivero',
-    km: 55.06,
-    moroso: false,
+    km: 75.15,
+    moroso: true,
   },
   {
     name: 'Jose "Nacho" Pérez',
-    km: 6.64,
+    km: 13.54,
     moroso: true,
   },
   {
     name: 'Carlos González',
-    km: 18.4,
+    km: 25.3,
     moroso: true,
   },
   {
@@ -66,13 +66,13 @@ export const WALKERS: Player[] = [
 export const RUNNERS: Player[] = [
   {
     name: 'Génesis León',
-    km: 56.44,
+    km: 66.44,
     gender: 'F',
     moroso: true,
   },
   {
     name: 'Gerardo Pérez',
-    km: 27.4,
+    km: 37.4,
     gender: 'M',
     moroso: false,
   },
