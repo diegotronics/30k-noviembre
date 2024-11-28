@@ -8,12 +8,12 @@ export type Player = {
 export const WALKERS: Player[] = [
   {
     name: 'Ángela González',
-    km: 50.71,
+    km: 57.74,
     moroso: false,
   },
   {
     name: 'Oneida Aguirre',
-    km: 43.03,
+    km: 50.04,
     moroso: false,
   },
   {
@@ -66,13 +66,13 @@ export const WALKERS: Player[] = [
 export const RUNNERS: Player[] = [
   {
     name: 'Génesis León',
-    km: 66.44,
+    km: 73.74,
     gender: 'F',
     moroso: true,
   },
   {
     name: 'Gerardo Pérez',
-    km: 37.4,
+    km: 44.7,
     gender: 'M',
     moroso: false,
   },
