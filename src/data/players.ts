@@ -28,17 +28,17 @@ export const WALKERS: Player[] = [
   },
   {
     name: 'Gladys "Mary" González',
-    km: 45.43,
+    km: 54.17,
     moroso: false,
   },
   {
     name: 'Juana Rivero',
-    km: 75.15,
+    km: 84.93,
     moroso: false,
   },
   {
     name: 'Jose "Nacho" Pérez',
-    km: 13.54,
+    km: 15.98,
     moroso: false,
   },
   {
