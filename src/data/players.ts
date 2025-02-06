@@ -44,7 +44,7 @@ export const WALKERS: Player[] = [
   {
     name: 'Carlos González',
     km: 25.3,
-    moroso: true,
+    moroso: false,
   },
   {
     name: 'Ricardo Pérez',
@@ -68,7 +68,7 @@ export const RUNNERS: Player[] = [
     name: 'Génesis León',
     km: 73.74,
     gender: 'F',
-    moroso: true,
+    moroso: false,
   },
   {
     name: 'Gerardo Pérez',
